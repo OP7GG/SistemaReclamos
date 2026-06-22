@@ -1,4 +1,3 @@
-
 package municipalidad.estructuras;
 import municipalidad.modelo.Reclamo;
 
@@ -17,16 +16,16 @@ public class ArbolBST {
         if(nodo == null){
             return new NodoBST(reclamo);
         }
-        if (reclamo.getCodigo()< nodo.getReclamo().getCodigo()){
+        if (reclamo.getCodigo() < nodo.getReclamo().getCodigo()){
             nodo.setIzq(insertarRecursivo(nodo.getIzq(), reclamo));
         }
-        else if (reclamo.getCodigo()> nodo.getReclamo().getCodigo()){
+        else if (reclamo.getCodigo() > nodo.getReclamo().getCodigo()){
             nodo.setDer(insertarRecursivo(nodo.getDer(), reclamo));
         }
         return nodo;
     }
+    
     public Reclamo buscar(int codigo){
-        
         NodoBST temp = raiz;
         
         while(temp != null){
@@ -43,7 +42,6 @@ public class ArbolBST {
                 temp = temp.getDer();
             }
         }
-        
         return null;
     }
     
@@ -52,15 +50,10 @@ public class ArbolBST {
     }
     
     private void inordenRecursivo(NodoBST nodo){
-        
         if(nodo != null){
-            
             inordenRecursivo(nodo.getIzq());
-        
             System.out.println(nodo.getReclamo());
-        
             inordenRecursivo(nodo.getDer());
-        
         }
     }
     
@@ -69,13 +62,9 @@ public class ArbolBST {
     }
     
     private void preordenRecursivo(NodoBST nodo){
-        
         if(nodo != null){
-            
             System.out.println(nodo.getReclamo());
-            
             inordenRecursivo(nodo.getIzq());
-            
             inordenRecursivo(nodo.getDer());
         }
     }
@@ -85,23 +74,18 @@ public class ArbolBST {
     }
     
     private void posordenRecursivo(NodoBST nodo){
-        
         if(nodo != null){
-            
             inordenRecursivo(nodo.getIzq());
-            
             inordenRecursivo(nodo.getDer());
-            
             System.out.println(nodo.getReclamo());
-            
         }
     }
     
     public void eliminar(int codigo){
         raiz = eliminarRecursivo(raiz, codigo);
     }
+    
     private NodoBST eliminarRecursivo(NodoBST nodo, int codigo){
-        
         if(nodo == null){
             return null;
         }
@@ -122,9 +106,7 @@ public class ArbolBST {
             }
             //Caso con 2 hijos
             NodoBST sucesor = obtenerMenor(nodo.getDer());
-            
             nodo.setReclamo(sucesor.getReclamo());
-            
             nodo.setDer(eliminarRecursivo(nodo.getDer(), sucesor.getReclamo().getCodigo()));
         }
         return nodo;
@@ -136,5 +118,4 @@ public class ArbolBST {
         }
         return nodo;
     }
-    
 }

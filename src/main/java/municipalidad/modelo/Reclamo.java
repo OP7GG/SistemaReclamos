@@ -27,7 +27,7 @@ public class Reclamo {
         this.diasParaVencer = diasParaVencer;
     }
     
-    public String getCodigo() { return codigo; }
+    public int getCodigo() { return codigo; } // ¡Corregido a int!
     public void setCodigo(int codigo) { this.codigo = codigo; }
     
     public String getNombre() { return nombre; }

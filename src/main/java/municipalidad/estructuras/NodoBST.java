@@ -1,4 +1,3 @@
-
 package municipalidad.estructuras;
 import municipalidad.modelo.Reclamo;
 
@@ -36,5 +35,4 @@ public class NodoBST {
     public void setReclamo(Reclamo reclamo) {
         this.reclamo = reclamo;
     }
-    
 }
