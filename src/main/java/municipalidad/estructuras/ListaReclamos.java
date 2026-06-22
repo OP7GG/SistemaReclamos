@@ -35,12 +35,12 @@ public class ListaReclamos {
         tamaño++;
     }
     
-    public boolean eliminar(String codigo) {
+    public boolean eliminar(int codigo) {
         if (cabeza == null) {
             return false;
         }
         
-        if (cabeza.dato.getCodigo().equals(codigo)) {
+        if (cabeza.dato.getCodigo()== codigo) {
             cabeza = cabeza.siguiente;
             tamaño--;
             return true;
@@ -48,7 +48,7 @@ public class ListaReclamos {
         
         Nodo actual = cabeza;
         while (actual.siguiente != null) {
-            if (actual.siguiente.dato.getCodigo().equals(codigo)) {
+            if (actual.siguiente.dato.getCodigo()== codigo ) {
                 actual.siguiente = actual.siguiente.siguiente;
                 tamaño--;
                 return true;
@@ -59,10 +59,10 @@ public class ListaReclamos {
         return false;
     }
     
-    public Reclamo buscar(String codigo) {
+    public Reclamo buscar(int codigo) {
         Nodo actual = cabeza;
         while (actual != null) {
-            if (actual.dato.getCodigo().equals(codigo)) {
+            if (actual.dato.getCodigo() == codigo) {
                 return actual.dato;
             }
             actual = actual.siguiente;
