@@ -2,7 +2,7 @@ package municipalidad.modelo;
 
 public class Reclamo {
     
-    private String codigo;
+    private int codigo;
     private String nombre;
     private String rut;
     private String tipo;
@@ -13,7 +13,7 @@ public class Reclamo {
     private String fechaVencimiento; 
     private int diasParaVencer; 
     
-    public Reclamo(String codigo, String nombre, String rut, String tipo, 
+    public Reclamo(int codigo, String nombre, String rut, String tipo, 
                    String descripcion, int prioridad, String fechaVencimiento, int diasParaVencer) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -28,7 +28,7 @@ public class Reclamo {
     }
     
     public String getCodigo() { return codigo; }
-    public void setCodigo(String codigo) { this.codigo = codigo; }
+    public void setCodigo(int codigo) { this.codigo = codigo; }
     
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
