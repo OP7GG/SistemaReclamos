@@ -64,8 +64,8 @@ public class ArbolBST {
     private void preordenRecursivo(NodoBST nodo){
         if(nodo != null){
             System.out.println(nodo.getReclamo());
-            inordenRecursivo(nodo.getIzq());
-            inordenRecursivo(nodo.getDer());
+            preordenRecursivo(nodo.getIzq());
+            preordenRecursivo(nodo.getDer());
         }
     }
     
@@ -75,8 +75,8 @@ public class ArbolBST {
     
     private void posordenRecursivo(NodoBST nodo){
         if(nodo != null){
-            inordenRecursivo(nodo.getIzq());
-            inordenRecursivo(nodo.getDer());
+            posordenRecursivo(nodo.getIzq());
+            posordenRecursivo(nodo.getDer());
             System.out.println(nodo.getReclamo());
         }
     }
@@ -96,15 +96,12 @@ public class ArbolBST {
             nodo.setDer(eliminarRecursivo(nodo.getDer(), codigo));
         }
         else{
-            //Caso 1 Sin hijo izquierdo
             if (nodo.getIzq() == null){
                 return nodo.getDer();
             }
-            //Caso 2 Sin hijo derecho
             if(nodo.getDer() == null){
                 return nodo.getIzq();
             }
-            //Caso con 2 hijos
             NodoBST sucesor = obtenerMenor(nodo.getDer());
             nodo.setReclamo(sucesor.getReclamo());
             nodo.setDer(eliminarRecursivo(nodo.getDer(), sucesor.getReclamo().getCodigo()));
