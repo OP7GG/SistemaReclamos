@@ -18,3 +18,7 @@ de datos y algoritmos implementados.
 - Merge sort -> O(n log n)
 - Funciones recursivas
 - Divide and conquerer 
+
+## Tecnologias
+- Java
+- Github
