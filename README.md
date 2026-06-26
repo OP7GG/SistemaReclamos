@@ -16,7 +16,7 @@ Sistema en Java para administrar reclamos ciudadanos. Implementa listas, pilas, 
 
 ## Como ejecutar
 
-1. Descomprime el archivo Grupo_XX.zip
+1. Descomprime el archivo Grupo_05.zip
 
 2. Abre NetBeans
 
