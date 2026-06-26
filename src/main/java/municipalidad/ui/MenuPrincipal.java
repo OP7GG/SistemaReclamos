@@ -45,6 +45,7 @@ public class MenuPrincipal {
         System.out.println("13. Ver alertas de vencimiento");
         System.out.println("14. Ver historial de cambios");
         System.out.println("15. Ver estadisticas");
+        System.out.println("16. Ver inorden (AVL)");
         System.out.println("0. Salir");
     }
     
@@ -94,6 +95,9 @@ public class MenuPrincipal {
                 break;
             case 15:
                 sistema.estadisticas();
+                break;
+            case 16:
+                sistema.mostrarAVLInorden();
                 break;
             case 0:
                 return true;

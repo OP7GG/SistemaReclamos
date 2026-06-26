@@ -10,6 +10,7 @@ public class SistemaReclamos {
     private ColaReclamos cola;
     private PilaReclamos historial;
     private ArbolBST arbolBST;
+    private ArbolAVL arbolAVL;
     private int contador;
     
     public SistemaReclamos() {
@@ -17,6 +18,7 @@ public class SistemaReclamos {
         cola = new ColaReclamos();
         historial = new PilaReclamos();
         arbolBST = new ArbolBST();
+        arbolAVL = new ArbolAVL();
         contador = 1;
     }
     
@@ -28,6 +30,7 @@ public class SistemaReclamos {
         
         lista.agregar(reclamo);
         arbolBST.insertar(reclamo);
+        arbolAVL.insertar(reclamo);
         cola.encolar(reclamo);
         historial.push("Reclamo " + codigo + " registrado por " + nombre);
         
@@ -109,18 +112,23 @@ public class SistemaReclamos {
     }
     
     public void mostrarInorden() {
-        System.out.println("Recorrido Inorden");
+        System.out.println("Recorrido Inorden BST");
         arbolBST.inorden();
     }
     
     public void mostrarPreorden() {
-        System.out.println("Recorrido Preorden");
+        System.out.println("Recorrido Preorden BST");
         arbolBST.preorden();
     }
     
     public void mostrarPostorden() {
-        System.out.println("Recorrido Postorden");
+        System.out.println("Recorrido Postorden BST");
         arbolBST.posorden();
+    }
+    
+    public void mostrarAVLInorden() {
+        System.out.println("Recorrido Inorden Arbol AVL (balanceado)");
+        arbolAVL.inorden();
     }
     
     public void ordenarPorPrioridad() {
